@@ -156,11 +156,10 @@
       position: absolute;
       inset: -34px;
       background:
-        radial-gradient(circle at 18% 26%, rgba(167, 54, 43, .16), transparent 38%),
-        radial-gradient(circle at 82% 72%, rgba(69, 93, 74, .18), transparent 40%),
-        linear-gradient(135deg, rgba(255, 254, 249, .84), rgba(216, 147, 34, .10));
-      filter: blur(18px);
-      opacity: .9;
+        linear-gradient(90deg, rgba(251, 247, 238, .72), rgba(251, 247, 238, .1) 48%, rgba(251, 247, 238, .72)),
+        url("asset/hero-preview.jpg") center / cover;
+      filter: blur(24px) saturate(1.08);
+      opacity: .58;
       transform: scale(1.06);
     }
 
@@ -702,7 +701,7 @@
   </nav>
 
   <header class="hero" id="top">
-    <video class="hero-video" id="heroVideo" autoplay loop playsinline controls preload="auto" aria-label="Avisha and Arpan save the date video">
+    <video class="hero-video" id="heroVideo" autoplay loop playsinline controls preload="auto" poster="asset/hero-preview.jpg" aria-label="Avisha and Arpan save the date video">
       <source src="asset/Avisha%20%26%20Arpan%20Save%20The%20Date.MOV">
     </video>
   </header>
