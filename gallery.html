@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Avisha & Arpan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #171819;
+      --night: #0d1110;
+      --paper: #fbf7ee;
+      --white: #fffef9;
+      --marigold: #d89322;
+      --sindoor: #a7362b;
+      --body: "Manrope", sans-serif;
+      --display: "Playfair Display", Georgia, serif;
+      --script: "Great Vibes", cursive;
+      --engraved: "Cinzel", Georgia, serif;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(69, 93, 74, .08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(167, 54, 43, .07) 1px, transparent 1px),
+        var(--paper);
+      background-size: 44px 44px;
+      font-family: var(--body);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      opacity: .12;
+      background-image: radial-gradient(rgba(23, 24, 25, .18) 1px, transparent 1px);
+      background-size: 7px 7px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 12;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px clamp(16px, 4vw, 46px);
+      border-bottom: 1px solid rgba(255, 254, 249, .14);
+      background: rgba(13, 17, 16, .92);
+      color: var(--white);
+      backdrop-filter: blur(18px);
+    }
+
+    .monogram {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 7px;
+      white-space: nowrap;
+    }
+
+    .script {
+      font-family: var(--script);
+      font-weight: 400;
+    }
+
+    .amp {
+      color: var(--marigold);
+      font-family: var(--script);
+      font-weight: 400;
+    }
+
+    .block {
+      font-family: var(--engraved);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .monogram .script {
+      font-size: 1.8rem;
+    }
+
+    .monogram .block {
+      font-size: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      transition: background 500ms var(--ease), transform 500ms var(--ease);
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      background: rgba(255, 254, 249, .13);
+      transform: translateY(-1px);
+    }
+
+    main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(46px, 7vw, 86px) 0;
+    }
+
+    .gallery-head {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--sindoor);
+      font-size: .76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1;
+    }
+
+    .gallery-head p:last-child {
+      margin: 0;
+      font-size: 1.03rem;
+      line-height: 1.75;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    figure {
+      margin: 0;
+      height: clamp(170px, 22vw, 250px);
+      overflow: hidden;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(216, 147, 34, .08), transparent 44%),
+        #fffef9;
+      box-shadow: 0 16px 42px rgba(36, 30, 22, .12);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    @media (max-width: 900px) {
+      .site-nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .gallery-head {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      figure {
+        height: clamp(150px, 44vw, 230px);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+      }
+
+      .nav-links a {
+        padding: 9px 4px;
+        text-align: center;
+        font-size: .66rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="monogram" href="index.html"><span class="script">Avisha</span><span class="amp">&</span><span class="block">Arpan</span></a>
+    <div class="nav-links">
+      <a href="index.html#details">Details</a>
+      <a href="index.html#ceremony">Wedding</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
+      <a href="index.html#rsvp">RSVP</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="gallery-head">
+      <div>
+        <p class="kicker">Gallery</p>
+        <h1>All the little moments we keep replaying.</h1>
+      </div>
+      <p>A little corner for the photos we love most. Take your time, scroll around, and enjoy the moments exactly as they were captured.</p>
+    </div>
+
+    <div class="photo-grid">
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-66.JPEG" alt="Avisha and Arpan walking outdoors"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-31.JPEG" alt="Avisha and Arpan engagement photo"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-27.JPEG" alt="Avisha and Arpan portrait"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/AA-13.JPG" alt="Avisha and Arpan photo"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-53.JPG" alt="Avisha and Arpan outdoors"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-57.JPG" alt="Avisha and Arpan together"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-20.JPEG" alt="Avisha and Arpan portrait"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-36.JPEG" alt="Avisha and Arpan engagement moment"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-16.JPEG" alt="Avisha and Arpan photo"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/AABK-1%202.JPG" alt="Avisha and Arpan black and white photo"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-55.JPG" alt="Avisha and Arpan candid photo"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/AA-5.JPG" alt="Avisha and Arpan portrait"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-58.JPEG" alt="Avisha and Arpan smiling"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-63.JPEG" alt="Avisha and Arpan sitting by water"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-49.JPG" alt="Avisha and Arpan couple portrait"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-48.jpeg" alt="Avisha and Arpan photo"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-25.JPEG" alt="Avisha and Arpan engagement portrait"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-64.JPEG" alt="Avisha and Arpan photo"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/AA-9%202.JPG" alt="Avisha and Arpan portrait"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/IMG_2560%202.jpg" alt="Avisha and Arpan smiling together"></figure>
+      <figure><img loading="lazy" decoding="async" src="asset/Avisha%26Arpan-32.JPEG" alt="Avisha and Arpan portrait"></figure>
+    </div>
+  </main>
+</body>
+</html>

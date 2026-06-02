@@ -155,9 +155,12 @@
       content: "";
       position: absolute;
       inset: -34px;
-      background: url("asset/Avisha%26Arpan-66.JPEG") center / cover;
-      filter: blur(26px) saturate(1.08);
-      opacity: .32;
+      background:
+        radial-gradient(circle at 18% 26%, rgba(167, 54, 43, .16), transparent 38%),
+        radial-gradient(circle at 82% 72%, rgba(69, 93, 74, .18), transparent 40%),
+        linear-gradient(135deg, rgba(255, 254, 249, .84), rgba(216, 147, 34, .10));
+      filter: blur(18px);
+      opacity: .9;
       transform: scale(1.06);
     }
 
@@ -253,8 +256,8 @@
 
     .couple-name {
       display: grid;
-      gap: 2px;
       justify-items: center;
+      gap: 0;
       width: min(620px, 100%);
       margin: 0 auto 30px;
       line-height: .9;
@@ -262,6 +265,7 @@
     }
 
     .couple-name .script {
+      display: block;
       font-size: clamp(3.6rem, 6vw, 5.8rem);
       line-height: .92;
     }
@@ -269,13 +273,11 @@
     .couple-name .amp {
       font-size: clamp(2.2rem, 4vw, 3.8rem);
       line-height: .7;
-      justify-self: end;
-      margin-right: 18%;
-      margin-top: -4px;
-      margin-bottom: -2px;
+      margin: -2px 0 2px;
     }
 
     .couple-name .block {
+      display: block;
       font-size: clamp(2.3rem, 4.2vw, 4.2rem);
       line-height: .95;
     }
@@ -657,7 +659,6 @@
 
       .couple-name .amp {
         font-size: clamp(2rem, 9vw, 3.3rem);
-        margin-right: 16%;
       }
 
       .couple-name .block {
@@ -695,13 +696,13 @@
     <div class="nav-links">
       <a href="#details">Details</a>
       <a href="#ceremony">Wedding</a>
-      <a href="#gallery">Photos</a>
+      <a href="gallery.html" id="galleryLink">Gallery</a>
       <a href="#rsvp">RSVP</a>
     </div>
   </nav>
 
   <header class="hero" id="top">
-    <video class="hero-video" id="heroVideo" autoplay loop playsinline controls preload="auto" poster="asset/IMG_2560%202.jpg" aria-label="Avisha and Arpan save the date video">
+    <video class="hero-video" id="heroVideo" autoplay loop playsinline controls preload="auto" aria-label="Avisha and Arpan save the date video">
       <source src="asset/Avisha%20%26%20Arpan%20Save%20The%20Date.MOV">
     </video>
   </header>
@@ -727,14 +728,15 @@
         <div class="detail-cell">
           <span>Wedding Day</span>
           <strong>12.12.26</strong>
+          <p>11:30 AM onwards</p>
         </div>
         <div class="detail-cell">
           <span>Venue</span>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=Bhartiya%20Temple%20Troy%20Michigan" target="_blank" rel="noreferrer">Bhartiya Temple<br>Troy, Michigan</a></p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Bhartiya%20Temple%206850%20N%20Adams%20Rd%20Troy%20Michigan" target="_blank" rel="noreferrer">Bhartiya Temple<br>6850 N Adams Rd<br>Troy, Michigan</a></p>
         </div>
         <div class="detail-cell">
           <span>More Details</span>
-          <p>Formal invitation, ceremony schedule, dress guidance, and travel notes will be shared closer to the celebration.</p>
+          <p>Ceremony schedule, dress guidance, and travel notes will be shared closer to the celebration.</p>
         </div>
       </div>
     </section>
@@ -778,41 +780,6 @@
               <p>The ceremony closes with blessings from married women, the priest, elders, family, and friends as the couple is declared husband and wife and begins a new chapter together.</p>
             </article>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="gallery" id="gallery">
-      <div class="wrap">
-        <div class="gallery-head reveal">
-          <div>
-            <p class="kicker">Gallery</p>
-            <h2>All the little moments we keep replaying.</h2>
-          </div>
-          <p>A mix of smiles, sunshine, almost-candids, and the kind of photos our families will probably ask us to send again and again.</p>
-        </div>
-        <div class="photo-grid">
-          <figure class="span-7 tall reveal"><img src="asset/Avisha%26Arpan-66.JPEG" alt="Avisha and Arpan walking outdoors"></figure>
-          <figure class="span-5 reveal"><img src="asset/Avisha%26Arpan-31.JPEG" alt="Avisha and Arpan engagement photo"></figure>
-          <figure class="span-5 reveal"><img src="asset/Avisha%26Arpan-27.JPEG" alt="Avisha and Arpan portrait"></figure>
-          <figure class="span-4 reveal"><img src="asset/AA-13.JPG" alt="Avisha and Arpan photo"></figure>
-          <figure class="span-4 tall reveal"><img src="asset/Avisha%26Arpan-53.JPG" alt="Avisha and Arpan outdoors"></figure>
-          <figure class="span-4 reveal"><img src="asset/Avisha%26Arpan-57.JPG" alt="Avisha and Arpan together"></figure>
-          <figure class="span-5 tall reveal"><img src="asset/Avisha%26Arpan-20.JPEG" alt="Avisha and Arpan portrait"></figure>
-          <figure class="span-7 reveal"><img src="asset/Avisha%26Arpan-36.JPEG" alt="Avisha and Arpan engagement moment"></figure>
-          <figure class="span-4 reveal"><img src="asset/Avisha%26Arpan-16.JPEG" alt="Avisha and Arpan photo"></figure>
-          <figure class="span-4 tall reveal"><img src="asset/AABK-1%202.JPG" alt="Avisha and Arpan black and white photo"></figure>
-          <figure class="span-4 reveal"><img src="asset/Avisha%26Arpan-55.JPG" alt="Avisha and Arpan candid photo"></figure>
-          <figure class="span-3 tall reveal"><img src="asset/AA-5.JPG" alt="Avisha and Arpan portrait"></figure>
-          <figure class="span-5 reveal"><img src="asset/Avisha%26Arpan-58.JPEG" alt="Avisha and Arpan smiling"></figure>
-          <figure class="span-4 reveal"><img src="asset/Avisha%26Arpan-63.JPEG" alt="Avisha and Arpan sitting by water"></figure>
-          <figure class="span-4 tall reveal"><img src="asset/Avisha%26Arpan-49.JPG" alt="Avisha and Arpan couple portrait"></figure>
-          <figure class="span-4 reveal"><img src="asset/Avisha%26Arpan-48.jpeg" alt="Avisha and Arpan photo"></figure>
-          <figure class="span-4 tall reveal"><img src="asset/Avisha%26Arpan-25.JPEG" alt="Avisha and Arpan engagement portrait"></figure>
-          <figure class="span-4 reveal"><img src="asset/Avisha%26Arpan-64.JPEG" alt="Avisha and Arpan photo"></figure>
-          <figure class="span-4 tall reveal"><img src="asset/AA-9%202.JPG" alt="Avisha and Arpan portrait"></figure>
-          <figure class="span-4 tall reveal"><img src="asset/IMG_2560%202.jpg" alt="Avisha and Arpan smiling together"></figure>
-          <figure class="span-4 tall reveal"><img src="asset/Avisha%26Arpan-32.JPEG" alt="Avisha and Arpan portrait"></figure>
         </div>
       </div>
     </section>
@@ -873,7 +840,7 @@
   <footer>
     <div class="wrap">
       <strong><span class="script">Avisha</span> <span class="amp">&</span> <span class="block">Arpan</span></strong>
-      <span>December 12, 2026 | Bhartiya Temple, Troy, Michigan</span>
+      <span>December 12, 2026 at 11:30 AM onwards | Bhartiya Temple, 6850 N Adams Rd, Troy, Michigan</span>
     </div>
   </footer>
 
@@ -896,9 +863,16 @@
 
     window.addEventListener("load", startHeroVideo);
     window.addEventListener("pageshow", startHeroVideo);
+    window.addEventListener("pagehide", () => video?.pause());
+    window.addEventListener("beforeunload", () => video?.pause());
     document.addEventListener("visibilitychange", () => {
-      if (!document.hidden) startHeroVideo();
+      if (document.hidden) {
+        video?.pause();
+      } else {
+        startHeroVideo();
+      }
     });
+    document.getElementById("galleryLink")?.addEventListener("click", () => video?.pause());
     document.addEventListener("pointerdown", () => {
       if (!video) return;
       video.muted = false;
@@ -926,7 +900,7 @@
       data.submittedAt = new Date().toISOString();
 
       if (!GOOGLE_SCRIPT_URL) {
-        statusText.textContent = "RSVP form is ready. Add your Google Apps Script URL to connect the sheet.";
+        statusText.textContent = "Thank you for wanting to celebrate with us. We are still finishing the RSVP setup, so for now please RSVP to Avisha by messaging 6146157559.";
         return;
       }
 
