@@ -856,7 +856,10 @@
       try {
         await video.play();
       } catch (error) {
-        video.controls = true;
+        video.muted = true;
+        video.play().catch(() => {
+          video.controls = true;
+        });
       }
     };
 
@@ -872,11 +875,12 @@
       }
     });
     document.getElementById("galleryLink")?.addEventListener("click", () => video?.pause());
-    document.addEventListener("pointerdown", () => {
+    const enableMusic = () => {
       if (!video) return;
       video.muted = false;
       video.play().catch(() => {});
-    }, { once: true });
+    };
+    document.addEventListener("pointerdown", enableMusic, { once: true });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
